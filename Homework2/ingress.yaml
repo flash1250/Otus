@@ -1,0 +1,17 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: dockerwebapp-ingress
+spec:
+  rules:
+  - host: arch.homework
+    http:
+      paths:
+      - path: /health
+        pathType: Exact
+        backend:
+          service:
+            name: dockerwebapp
+            port:
+              number: 80
+ 
