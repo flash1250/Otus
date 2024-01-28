@@ -1,14 +1,16 @@
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
+  annotations:
+    nginx.ingress.kubernetes.io/use-regex: "true"  
   name: dockerwebapp-ingress
 spec:
   rules:
   - host: arch.homework
     http:
-      paths:
+      paths:     
       - path: /health
-        pathType: Exact
+        pathType: ImplementationSpecific
         backend:
           service:
             name: dockerwebapp

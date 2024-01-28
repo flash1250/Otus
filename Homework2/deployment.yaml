@@ -17,5 +17,6 @@ spec:
       containers:
       - name: dockerwebapp
         image: flash1200/dockerwebapp:firsttry
+        imagePullPolicy: Always
         ports:
         - containerPort: 8080      
