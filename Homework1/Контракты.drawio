@@ -1,11 +1,11 @@
-<mxfile host="app.diagrams.net" modified="2024-06-19T14:19:24.605Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36" etag="cFgfXU2wdEKAPx0-Lc1j" version="24.5.5" type="github">
+<mxfile host="app.diagrams.net" modified="2024-06-19T14:19:46.516Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36" etag="ZBGrKFBeEZjyuGslOoDt" version="24.5.5" type="github">
   <diagram id="C5RBs43oDa-KdzZeNtuy" name="Page-1">
-    <mxGraphModel dx="2261" dy="746" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="1434" dy="746" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="WIyWlLk6GJQsqaUBKTNV-0" />
         <mxCell id="WIyWlLk6GJQsqaUBKTNV-1" parent="WIyWlLk6GJQsqaUBKTNV-0" />
         <mxCell id="vXif_3IN8qVI8ytzE40H-0" value="API Gateway" style="rounded=1;whiteSpace=wrap;html=1;fontSize=12;glass=0;strokeWidth=1;shadow=0;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
-          <mxGeometry x="380" y="100" width="120" height="50" as="geometry" />
+          <mxGeometry x="440" y="100" width="120" height="50" as="geometry" />
         </mxCell>
         <mxCell id="vXif_3IN8qVI8ytzE40H-1" value="Сервис аутентификации и авторизации" style="rounded=1;whiteSpace=wrap;html=1;fontSize=12;glass=0;strokeWidth=1;shadow=0;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
           <mxGeometry x="79" y="100" width="120" height="50" as="geometry" />
@@ -17,13 +17,13 @@
           </mxGeometry>
         </mxCell>
         <mxCell id="vXif_3IN8qVI8ytzE40H-3" value="GetUser,&lt;div&gt;CreateUser,&lt;/div&gt;&lt;div&gt;EditUser,&lt;/div&gt;&lt;div&gt;DeleteUser&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
-          <mxGeometry x="230" y="50" width="90" height="70" as="geometry" />
+          <mxGeometry x="270" y="50" width="90" height="70" as="geometry" />
         </mxCell>
         <mxCell id="vXif_3IN8qVI8ytzE40H-4" value="long UserId&lt;div&gt;string Login&lt;/div&gt;&lt;div&gt;string Password&lt;/div&gt;&lt;div&gt;DateTime CreateDate&lt;/div&gt;&lt;div&gt;string Email&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
-          <mxGeometry x="210" y="130" width="140" height="90" as="geometry" />
+          <mxGeometry x="245" y="130" width="140" height="90" as="geometry" />
         </mxCell>
         <mxCell id="vXif_3IN8qVI8ytzE40H-5" value="Login -string Login, string Password&lt;div&gt;Logout - string Login&lt;br&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
-          <mxGeometry x="-11" y="150" width="210" height="60" as="geometry" />
+          <mxGeometry x="30" y="150" width="210" height="60" as="geometry" />
         </mxCell>
         <mxCell id="vXif_3IN8qVI8ytzE40H-6" value="API Gateway" style="rounded=1;whiteSpace=wrap;html=1;fontSize=12;glass=0;strokeWidth=1;shadow=0;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
           <mxGeometry x="79" y="300" width="120" height="50" as="geometry" />
