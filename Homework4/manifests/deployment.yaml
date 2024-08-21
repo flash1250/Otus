@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: homework4
+  labels:
+    app: homework4
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: homework4
+  template:
+    metadata:
+      labels:
+        app: homework4
+    spec:
+      containers:
+      - name: homework4
+        image: flash1200/homework4:firstversion
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 8080 
+        env:
+          - name: Database__ConnectionString
+            valueFrom:
+              secretKeyRef:
+                name: "homework4-secret"
+                key: "homework4_dbconnectionstring"
