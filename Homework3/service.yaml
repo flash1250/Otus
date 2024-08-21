@@ -5,6 +5,7 @@ metadata:
   labels:
     app: dockerwebapp
 spec:
+  type: LoadBalancer
   ports:
   - name: dockerwebapp-http
     port: 80
