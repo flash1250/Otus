@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: homework6userservice
+  labels:
+    app: homework6userservice
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: homework6userservice
+  template:
+    metadata:
+      labels:
+        app: homework6userservice
+    spec:
+      containers:
+      - name: homework6userservice
+        image: flash1200/homework6_userservice:firstversion
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 8080 
+        env:
+          - name: Database__ConnectionString
+            valueFrom:
+              secretKeyRef:
+                name: "homework6userservicesecret"
+                key: "homework6userservicedbconnectionstring"

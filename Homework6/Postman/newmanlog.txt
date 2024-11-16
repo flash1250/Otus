@@ -1,0 +1,277 @@
+C:\OTUS\OTUS_Homework6\Postman>newman run OTUS_Homework6_NewmanKuber.postman_collection_kuber.json --verbose
+newman
+
+OTUS_Homework6_NewmanKuber
+
+→ MainService_RegisterUser1
+  POST http://arch.homework/account/registerUser
+  200 OK ★ 1297ms time ★ 452B↑ 133B↓ size ★ 9↑ 4↓ headers ★ 0 cookies
+  ┌ ↑ raw ★ 153B
+  │ {
+  │     "login": "Eddard",
+  │     "password": "Stark123123123",
+  │     "firstName": "Ned",
+  │     "lastName": "Stark",
+  │     "email": "NedStart@gmail.com"
+  │ }
+  └
+  ↓ text/plain ★ text ★ plain ★ utf8
+
+  prepare   wait   dns-lookup   tcp-handshake   transfer-start   download   process   total
+  37ms      6ms    965µs        859µs           1278ms           9ms        421µs     1334ms
+
+
+→ MainService_GetUserProfileNotAuthenticatedUser1
+  GET http://arch.homework/account/getuserprofile?userId=1
+  500 Internal Server Error ★ 105ms time ★ 256B↑ 5.61kB↓ size ★ 7↑ 4↓ headers ★ 0 cookies
+  ┌ ↓ text/plain ★ text ★ plain ★ utf8 ★ 5.45kB
+  │ System.Net.Http.HttpRequestException: System.Exception: User not authorized: userId:1
+  │    at UserService.Controllers.UserController.GetUserProfile(Int32 userId, CancellationToken cancellationToken) in /source/Controllers/UserController.cs:line 53
+  │    at lambda_method116(Closure, Object)
+  │    at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.AwaitableObjectResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, O
+  │ bjectMethodExecutor executor, Object controller, Object[] arguments)
+  │    at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResul
+  │ tValueTask)
+  │    at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, Stat
+  │ e next, Scope scope, Object state, Boolean isCompleted)
+  │    at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+  │    at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+  │    at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State nex
+  │ t, Scope scope, Object state, Boolean isCompleted)
+  │    at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scop
+  │ e, Object state, Boolean isCompleted)
+  │    at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+  │    at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+  │    at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+  │    at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpCo
+  │ (showing 2.05kB/5.45kB)
+  └
+  prepare   wait    dns-lookup   tcp-handshake   transfer-start   download   process   total
+  2ms       541µs   (cache)      (cache)         100ms            3ms        229µs     106ms
+
+
+→ MainService_EditUserProfileNotAuthenticatedUser1
+  POST http://arch.homework/account/edituserprofile
+  500 Internal Server Error ★ 39ms time ★ 497B↑ 3kB↓ size ★ 9↑ 4↓ headers ★ 0 cookies
+  ┌ ↑ raw ★ 195B
+  │ {
+  │     "userid": 1,
+  │     "login": "Eddard",
+  │     "password": "Stark123123123",
+  │     "firstName": "Ned123123123",
+  │     "lastName": "Stark324234234",
+  │     "email": "Targaryien2222@gmail.com"
+  │ }
+  └
+  ┌ ↓ text/plain ★ text ★ plain ★ utf8 ★ 2.86kB
+  │ System.Exception: User not authorized: userId:1
+  │    at UserService.Repositories.UserRepository.EditUserProfile(UserProfile userProfile, CancellationToken cancellationToken) in /source/Repositories/UserRepository.cs:l
+  │ ine 84
+  │    at UserService.Providers.UserProvider.EditUserProfile(UserProfile userProfile, CancellationToken cancellationToken) in /source/Providers/UserProvider.cs:line 57
+  │    at UserService.Controllers.UserController.EditUserProfile(UserProfile userProfile, CancellationToken cancellationToken) in /source/Controllers/UserController.cs:lin
+  │ e 61
+  │    at lambda_method138(Closure, Object)
+  │    at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, Obje
+  │ ctMethodExecutor executor, Object controller, Object[] arguments)
+  │    at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResul
+  │ tValueTask)
+  │    at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, Stat
+  │ e next, Scope scope, Object state, Boolean isCompleted)
+  │    at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+  │    at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+  │    at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State nex
+  │ t, Scope scope, Object state, Boolean isCompleted)
+  │    at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scop
+  │ e, Object state, Boolean isCompleted)
+  │    at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+  │    at Microsoft.AspNetC
+  │ (showing 2.05kB/2.86kB)
+  └
+  prepare   wait    dns-lookup   tcp-handshake   transfer-start   download   process   total
+  1ms       371µs   (cache)      (cache)         35ms             2ms        48µs      39ms
+
+
+→ MainService_LoginUser1
+  POST http://arch.homework/account/login
+  200 OK ★ 28ms time ★ 356B↑ 133B↓ size ★ 9↑ 4↓ headers ★ 0 cookies
+  ┌ ↑ raw ★ 65B
+  │ {
+  │     "login": "Eddard",
+  │     "password": "Stark123123123"
+  │ }
+  └
+  ↓ text/plain ★ text ★ plain ★ utf8
+
+  prepare   wait    dns-lookup   tcp-handshake   transfer-start   download   process   total
+  1ms       277µs   (cache)      (cache)         25ms             1ms        45µs      29ms
+
+
+→ MainService_EditUserProfileUser1
+  POST http://arch.homework/account/edituserprofile
+  200 OK ★ 48ms time ★ 494B↑ 133B↓ size ★ 9↑ 4↓ headers ★ 0 cookies
+  ┌ ↑ raw ★ 192B
+  │ {
+  │     "userid": 1,
+  │     "login": "Eddard",
+  │     "password": "Stark123123123",
+  │     "firstName": "Ned123123123",
+  │     "lastName": "Stark324234234",
+  │     "email": "Starkkkkkkk@gmail.com"
+  │ }
+  └
+  ↓ text/plain ★ text ★ plain ★ utf8
+
+  prepare   wait    dns-lookup   tcp-handshake   transfer-start   download   process   total
+  2ms       320µs   (cache)      (cache)         45ms             2ms        39µs      49ms
+
+
+→ MainService_GetUserProfileUser1
+  GET http://arch.homework/account/getuserprofile?userId=1
+  200 OK ★ 20ms time ★ 256B↑ 254B↓ size ★ 7↑ 4↓ headers ★ 0 cookies
+  ┌ ↓ application/json ★ text ★ json ★ utf8 ★ 106B
+  │ {"id":1,"userId":1,"firstName":"Ned123123123","lastName":"Stark324234234","email":"Starkkkkkkk@gmail.com"}
+  └
+  prepare   wait    dns-lookup   tcp-handshake   transfer-start   download   process   total
+  1ms       214µs   (cache)      (cache)         17ms             1ms        41µs      21ms
+
+
+→ MainService_LogoutUser1
+  POST http://arch.homework/account/logout
+  200 OK ★ 25ms time ★ 309B↑ 133B↓ size ★ 9↑ 4↓ headers ★ 0 cookies
+  ┌ ↑ raw ★ 17B
+  │ {
+  │     "Id": 1
+  │ }
+  └
+  ↓ text/plain ★ text ★ plain ★ utf8
+
+  prepare   wait    dns-lookup   tcp-handshake   transfer-start   download   process   total
+  1ms       209µs   (cache)      (cache)         22ms             1ms        39µs      26ms
+
+
+→ MainService_RegisterUser2
+  POST http://arch.homework/account/registerUser
+  200 OK ★ 14ms time ★ 467B↑ 133B↓ size ★ 9↑ 4↓ headers ★ 0 cookies
+  ┌ ↑ raw ★ 168B
+  │ {
+  │     "login": "Daeneris",
+  │     "password": "Targaryen34234234",
+  │     "firstName": "Deni",
+  │     "lastName": "DragonQueen",
+  │     "email": "DragonQueen@gmail.com"
+  │ }
+  └
+  ↓ text/plain ★ text ★ plain ★ utf8
+
+  prepare   wait    dns-lookup   tcp-handshake   transfer-start   download   process   total
+  1ms       181µs   (cache)      (cache)         10ms             2ms        54µs      14ms
+
+
+→ MainService_LoginUser2
+  POST http://arch.homework/account/login
+  200 OK ★ 11ms time ★ 360B↑ 133B↓ size ★ 9↑ 4↓ headers ★ 0 cookies
+  ┌ ↑ raw ★ 69B
+  │ {
+  │     "login": "Daeneris",
+  │     "password": "Targaryen34234234"
+  │ }
+  └
+  ↓ text/plain ★ text ★ plain ★ utf8
+
+  prepare   wait    dns-lookup   tcp-handshake   transfer-start   download   process   total
+  1ms       304µs   (cache)      (cache)         9ms              1ms        30µs      12ms
+
+
+→ MainService_GetUserProfileUser1
+  GET http://arch.homework/account/getuserprofile?userId=1
+  500 Internal Server Error ★ 15ms time ★ 256B↑ 5.61kB↓ size ★ 7↑ 4↓ headers ★ 0 cookies
+  ┌ ↓ text/plain ★ text ★ plain ★ utf8 ★ 5.45kB
+  │ System.Net.Http.HttpRequestException: System.Exception: User not authorized: userId:1
+  │    at UserService.Controllers.UserController.GetUserProfile(Int32 userId, CancellationToken cancellationToken) in /source/Controllers/UserController.cs:line 53
+  │    at lambda_method116(Closure, Object)
+  │    at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.AwaitableObjectResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, O
+  │ bjectMethodExecutor executor, Object controller, Object[] arguments)
+  │    at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResul
+  │ tValueTask)
+  │    at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, Stat
+  │ e next, Scope scope, Object state, Boolean isCompleted)
+  │    at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+  │    at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+  │    at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State nex
+  │ t, Scope scope, Object state, Boolean isCompleted)
+  │    at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scop
+  │ e, Object state, Boolean isCompleted)
+  │    at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+  │    at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+  │    at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+  │    at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpCo
+  │ (showing 2.05kB/5.45kB)
+  └
+  prepare   wait    dns-lookup   tcp-handshake   transfer-start   download   process   total
+  1ms       394µs   (cache)      (cache)         12ms             1ms        44µs      16ms
+
+
+→ MainService_EditUserProfileUser1
+  POST http://arch.homework/account/edituserprofile
+  500 Internal Server Error ★ 11ms time ★ 494B↑ 3kB↓ size ★ 9↑ 4↓ headers ★ 0 cookies
+  ┌ ↑ raw ★ 192B
+  │ {
+  │     "userid": 1,
+  │     "login": "Eddard",
+  │     "password": "Stark123123123",
+  │     "firstName": "Ned123123123",
+  │     "lastName": "Stark324234234",
+  │     "email": "Starkkkkkkk@gmail.com"
+  │ }
+  └
+  ┌ ↓ text/plain ★ text ★ plain ★ utf8 ★ 2.86kB
+  │ System.Exception: User not authorized: userId:1
+  │    at UserService.Repositories.UserRepository.EditUserProfile(UserProfile userProfile, CancellationToken cancellationToken) in /source/Repositories/UserRepository.cs:l
+  │ ine 84
+  │    at UserService.Providers.UserProvider.EditUserProfile(UserProfile userProfile, CancellationToken cancellationToken) in /source/Providers/UserProvider.cs:line 57
+  │    at UserService.Controllers.UserController.EditUserProfile(UserProfile userProfile, CancellationToken cancellationToken) in /source/Controllers/UserController.cs:lin
+  │ e 61
+  │    at lambda_method138(Closure, Object)
+  │    at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, Obje
+  │ ctMethodExecutor executor, Object controller, Object[] arguments)
+  │    at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResul
+  │ tValueTask)
+  │    at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, Stat
+  │ e next, Scope scope, Object state, Boolean isCompleted)
+  │    at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+  │    at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+  │    at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State nex
+  │ t, Scope scope, Object state, Boolean isCompleted)
+  │    at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scop
+  │ e, Object state, Boolean isCompleted)
+  │    at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+  │    at Microsoft.AspNetC
+  │ (showing 2.05kB/2.86kB)
+  └
+  prepare   wait    dns-lookup   tcp-handshake   transfer-start   download   process   total
+  1ms       192µs   (cache)      (cache)         8ms              1ms        115µs     12ms
+
+
+┌─────────────────────────┬─────────────────────┬─────────────────────┐
+│                         │            executed │              failed │
+├─────────────────────────┼─────────────────────┼─────────────────────┤
+│              iterations │                   1 │                   0 │
+├─────────────────────────┼─────────────────────┼─────────────────────┤
+│                requests │                  11 │                   0 │
+├─────────────────────────┼─────────────────────┼─────────────────────┤
+│            test-scripts │                   0 │                   0 │
+├─────────────────────────┼─────────────────────┼─────────────────────┤
+│      prerequest-scripts │                   0 │                   0 │
+├─────────────────────────┼─────────────────────┼─────────────────────┤
+│              assertions │                   0 │                   0 │
+├─────────────────────────┴─────────────────────┴─────────────────────┤
+│ total run duration: 2.6s                                            │
+├─────────────────────────────────────────────────────────────────────┤
+│ total data received: 16.72kB (approx)                               │
+├─────────────────────────────────────────────────────────────────────┤
+│ average response time: 146ms [min: 11ms, max: 1297ms, s.d.: 364ms]  │
+├─────────────────────────────────────────────────────────────────────┤
+│ average DNS lookup time: 965µs [min: 965µs, max: 965µs, s.d.: 0µs]  │
+├─────────────────────────────────────────────────────────────────────┤
+│ average first byte time: 142ms [min: 8ms, max: 1278ms, s.d.: 360ms] │
+└─────────────────────────────────────────────────────────────────────┘

@@ -1,0 +1,19 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: homework6mainservice
+  labels:
+    app: homework6mainservice
+spec:
+  type: LoadBalancer
+  ports:
+  - name: homework6-http
+    port: 80
+    protocol: TCP
+    targetPort: 8080
+  - name: homework6-https
+    port: 443
+    protocol: TCP
+    targetPort: 443
+  selector:
+    app: homework6mainservice

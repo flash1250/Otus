@@ -1,0 +1,26 @@
+global:
+  postgresql:
+    auth:      
+      postgresPassword: "otuspostgres"
+      username: "otuspostgres"
+      password: "otuspostgres"
+      database: "otuspostgres"   
+containerPorts:
+  postgresql: 5432
+image:
+  registry: docker.io
+  repository: bitnami/postgresql
+  tag: 15.4.0-debian-11-r10
+  digest: ""
+  pullPolicy: IfNotPresent
+  debug: false
+postgresql:
+  extraVolumeMounts:
+    - name: create-my-table-configmap
+      mountPath: /docker-entrypoint-initdb.d
+      readOnly: true
+  extraVolumes:
+    - name: create-my-table-configmap
+      configMap:
+        name: create-my-table-configmap
+  
