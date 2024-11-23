@@ -1,0 +1,166 @@
+C:\OTUS\OTUS_Homework7\Postman>newman run OTUS_Homework7_NewmanKuber.postman_collection.json --verbose
+newman
+
+OTUS_Homework7_NewmanKuber
+
+→ MainService_RegisterUser
+  POST http://arch.homework/account/registerUser
+  200 OK ★ 150ms time ★ 471B↑ 149B↓ size ★ 9↑ 4↓ headers ★ 0 cookies
+  ┌ ↑ raw ★ 172B
+  │ {
+  │     "login": "JohnSnow",
+  │     "password": "J123123123123",
+  │     "firstName": "JohnSnow22",
+  │     "lastName": "Targaryien22",
+  │     "email": "Targaryien22@gmail.com"
+  │ }
+  └
+  ┌ ↓ application/json ★ text ★ json ★ utf8 ★ 1B
+  │ 1
+  └
+  prepare   wait   dns-lookup   tcp-handshake   transfer-start   download   process   total
+  39ms      6ms    1ms          690µs           92ms             49ms       430µs     189ms
+
+
+→ MainService_GetAccount
+  GET http://arch.homework/account/getAccount?userId=1
+  200 OK ★ 30ms time ★ 252B↑ 203B↓ size ★ 7↑ 4↓ headers ★ 0 cookies
+  ┌ ↓ application/json ★ text ★ json ★ utf8 ★ 55B
+  │ {"id":1,"userId":1,"userName":"JohnSnow22","amount":10}
+  └
+  prepare   wait    dns-lookup   tcp-handshake   transfer-start   download   process   total
+  2ms       609µs   (cache)      (cache)         25ms             2ms        61µs      31ms
+
+
+→ MainService_AddMoneyForUser
+  POST http://arch.homework/account/addMoneyForUser
+  200 OK ★ 30ms time ★ 348B↑ 133B↓ size ★ 9↑ 4↓ headers ★ 0 cookies
+  ┌ ↑ raw ★ 47B
+  │ {
+  │     "userid": "1",
+  │     "amount": "800"
+  │ }
+  └
+  ↓ text/plain ★ text ★ plain ★ utf8
+
+  prepare   wait    dns-lookup   tcp-handshake   transfer-start   download   process   total
+  1ms       373µs   (cache)      (cache)         25ms             3ms        93µs      31ms
+
+
+→ MainService_GetAccount
+  GET http://arch.homework/account/getAccount?userId=1
+  200 OK ★ 11ms time ★ 252B↑ 204B↓ size ★ 7↑ 4↓ headers ★ 0 cookies
+  ┌ ↓ application/json ★ text ★ json ★ utf8 ★ 56B
+  │ {"id":1,"userId":1,"userName":"JohnSnow22","amount":810}
+  └
+  prepare   wait    dns-lookup   tcp-handshake   transfer-start   download   process   total
+  1ms       217µs   (cache)      (cache)         7ms              2ms        60µs      11ms
+
+
+→ MainService_GetProducts
+  GET http://arch.homework/product/getproducts
+  200 OK ★ 44ms time ★ 244B↑ 254B↓ size ★ 7↑ 4↓ headers ★ 0 cookies
+  ┌ ↓ application/json ★ text ★ json ★ utf8 ★ 106B
+  │ [{"id":1,"name":"table","cost":500},{"id":2,"name":"chair","cost":200},{"id":3,"name":"divan","cost":700}]
+  └
+  prepare   wait    dns-lookup   tcp-handshake   transfer-start   download   process   total
+  2ms       442µs   (cache)      (cache)         40ms             2ms        55µs      45ms
+
+
+→ MainService_CreateOrderDivan
+  POST http://arch.homework/order/createOrder
+  200 OK ★ 75ms time ★ 372B↑ 224B↓ size ★ 9↑ 4↓ headers ★ 0 cookies
+  ┌ ↑ raw ★ 77B
+  │ {
+  │     "userid": "1",
+  │     "productId": "3",
+  │     "productName": "divan"
+  │ }
+  └
+  ┌ ↓ application/json ★ text ★ json ★ utf8 ★ 76B
+  │ {"result":"UserId: 1, ProductId: 3, ProductName: divan --- Order confirmed"}
+  └
+  prepare   wait    dns-lookup   tcp-handshake   transfer-start   download   process   total
+  1ms       207µs   (cache)      (cache)         72ms             1ms        45µs      75ms
+
+
+→ MainService_GetAccount
+  GET http://arch.homework/account/getAccount?userId=1
+  200 OK ★ 9ms time ★ 252B↑ 204B↓ size ★ 7↑ 4↓ headers ★ 0 cookies
+  ┌ ↓ application/json ★ text ★ json ★ utf8 ★ 56B
+  │ {"id":1,"userId":1,"userName":"JohnSnow22","amount":110}
+  └
+  prepare   wait    dns-lookup   tcp-handshake   transfer-start   download   process   total
+  2ms       388µs   (cache)      (cache)         6ms              1ms        38µs      11ms
+
+
+→ MainService_GetNotificationOrderDivan
+  GET http://arch.homework/order/getNotification?orderId=1
+  200 OK ★ 54ms time ★ 256B↑ 277B↓ size ★ 7↑ 4↓ headers ★ 0 cookies
+  ┌ ↓ application/json ★ text ★ json ★ utf8 ★ 129B
+  │ {"orderId":1,"emailText":"UserId: 1, ProductId: 3, ProductName: divan --- Order confirmed","emailStatus":1,"emailTextStr":"Sent"}
+  └
+  prepare   wait    dns-lookup   tcp-handshake   transfer-start   download   process   total
+  1ms       218µs   (cache)      (cache)         51ms             1ms        37µs      55ms
+
+
+→ MainService_CreateOrderTable
+  POST http://arch.homework/order/createOrder
+  200 OK ★ 31ms time ★ 372B↑ 242B↓ size ★ 9↑ 4↓ headers ★ 0 cookies
+  ┌ ↑ raw ★ 77B
+  │ {
+  │     "userid": "1",
+  │     "productId": "1",
+  │     "productName": "table"
+  │ }
+  └
+  ┌ ↓ application/json ★ text ★ json ★ utf8 ★ 94B
+  │ {"result":"UserId: 1, ProductId: 1, ProductName: table --- Order rejected (not enough money)"}
+  └
+  prepare   wait    dns-lookup   tcp-handshake   transfer-start   download   process   total
+  1ms       398µs   (cache)      (cache)         28ms             1ms        36µs      32ms
+
+
+→ MainService_GetAccount
+  GET http://arch.homework/account/getAccount?userId=1
+  200 OK ★ 10ms time ★ 252B↑ 204B↓ size ★ 7↑ 4↓ headers ★ 0 cookies
+  ┌ ↓ application/json ★ text ★ json ★ utf8 ★ 56B
+  │ {"id":1,"userId":1,"userName":"JohnSnow22","amount":110}
+  └
+  prepare   wait    dns-lookup   tcp-handshake   transfer-start   download   process   total
+  1ms       401µs   (cache)      (cache)         7ms              1ms        127µs     11ms
+
+
+→ MainService_GetNotificationOrderTable
+  GET http://arch.homework/order/getNotification?orderId=2
+  200 OK ★ 10ms time ★ 256B↑ 295B↓ size ★ 7↑ 4↓ headers ★ 0 cookies
+  ┌ ↓ application/json ★ text ★ json ★ utf8 ★ 147B
+  │ {"orderId":2,"emailText":"UserId: 1, ProductId: 1, ProductName: table --- Order rejected (not enough money)","emailStatus":1,"emailTextStr":"Sent"}
+  └
+  prepare   wait    dns-lookup   tcp-handshake   transfer-start   download   process   total
+  2ms       275µs   (cache)      (cache)         7ms              1ms        109µs     12ms
+
+
+┌─────────────────────────┬───────────────────┬───────────────────┐
+│                         │          executed │            failed │
+├─────────────────────────┼───────────────────┼───────────────────┤
+│              iterations │                 1 │                 0 │
+├─────────────────────────┼───────────────────┼───────────────────┤
+│                requests │                11 │                 0 │
+├─────────────────────────┼───────────────────┼───────────────────┤
+│            test-scripts │                 0 │                 0 │
+├─────────────────────────┼───────────────────┼───────────────────┤
+│      prerequest-scripts │                 0 │                 0 │
+├─────────────────────────┼───────────────────┼───────────────────┤
+│              assertions │                 0 │                 0 │
+├─────────────────────────┴───────────────────┴───────────────────┤
+│ total run duration: 1552ms                                      │
+├─────────────────────────────────────────────────────────────────┤
+│ total data received: 776B (approx)                              │
+├─────────────────────────────────────────────────────────────────┤
+│ average response time: 41ms [min: 9ms, max: 150ms, s.d.: 39ms]  │
+├─────────────────────────────────────────────────────────────────┤
+│ average DNS lookup time: 1ms [min: 1ms, max: 1ms, s.d.: 0µs]    │
+├─────────────────────────────────────────────────────────────────┤
+│ average first byte time: 33ms [min: 6ms, max: 92ms, s.d.: 27ms] │
+└─────────────────────────────────────────────────────────────────┘

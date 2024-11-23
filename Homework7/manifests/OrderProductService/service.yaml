@@ -1,0 +1,19 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: homework7orderproductservice
+  labels:
+    app: homework7orderproductservice
+spec:
+  type: LoadBalancer
+  ports:
+  - name: homework7-http
+    port: 90
+    protocol: TCP
+    targetPort: 8080
+  - name: homework7-https
+    port: 443
+    protocol: TCP
+    targetPort: 443
+  selector:
+    app: homework7orderproductservice

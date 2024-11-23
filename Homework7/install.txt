@@ -1,0 +1,45 @@
+Установка postgresql (папка манифестов postgres)
+
+helm repo update
+
+kubectl apply -f postgres-pv.yaml
+kubectl apply -f postgres-pvc.yaml
+
+helm install postgresql oci://registry-1.docker.io/bitnamicharts/postgresql --set persistence.existingClaim=postgresql-pv-claim --set volumePermissions.enabled=true -f values.yaml
+
+После запуска пода из папки migrations: пароль otuspostgres
+kubectl cp ./migration.sql postgresql-0:/tmp/migration.sql 
+kubectl exec -it postgresql-0 -- psql -U otuspostgres -d otuspostgres -f /tmp/migration.sql
+
+Установка приложения
+
+1. папка манифестов MainService
+
+kubectl apply -f deployment.yaml
+kubectl apply -f service.yaml
+kubectl apply -f ingress.yaml
+
+2.папка манифестов UserService
+kubectl apply -f deployment.yaml
+kubectl apply -f service.yaml
+kubectl apply -f ingress.yaml
+kubectl apply -f secrets.yaml
+
+3.папка манифестов BillingService
+kubectl apply -f deployment.yaml
+kubectl apply -f service.yaml
+kubectl apply -f ingress.yaml
+kubectl apply -f secrets.yaml
+
+4.папка манифестов OrderProductService
+kubectl apply -f deployment.yaml
+kubectl apply -f service.yaml
+kubectl apply -f ingress.yaml
+kubectl apply -f secrets.yaml
+
+5.папка манифестов NotificationService
+kubectl apply -f deployment.yaml
+kubectl apply -f service.yaml
+kubectl apply -f ingress.yaml
+kubectl apply -f secrets.yaml
+

@@ -1,0 +1,19 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  annotations:
+    nginx.ingress.kubernetes.io/use-regex: "true"  
+  name: homework7-ingress
+spec:
+  rules:
+  - host: arch.homework7
+    http:
+      paths:     
+      - path: /health
+        pathType: ImplementationSpecific
+        backend:
+          service:
+            name: homework7notificationservice
+            port:
+              number: 80
+ 

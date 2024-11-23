@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: homework7orderproductservice
+  labels:
+    app: homework7orderproductservice
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: homework7orderproductservice
+  template:
+    metadata:
+      labels:
+        app: homework7orderproductservice
+    spec:
+      containers:
+      - name: homework7orderproductservice
+        image: flash1200/homework7_orderproductservice:firstversion
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 8080 
+        env:
+          - name: Database__ConnectionString
+            valueFrom:
+              secretKeyRef:
+                name: "homework7orderproductservicesecret"
+                key: "homework7orderproductservicedbconnectionstring"
