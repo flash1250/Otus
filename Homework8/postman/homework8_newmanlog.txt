@@ -1,0 +1,301 @@
+C:\OTUS\otus_github\Homework8\postman>newman run OTUS_Homework8_NewmanKuber.postman_collection.json --verbose
+newman
+
+OTUS_Homework8_NewmanKuber
+
+→ MainService_RegisterUser
+  POST http://arch.homework/account/registerUser
+  200 OK ★ 306ms time ★ 471B↑ 149B↓ size ★ 9↑ 4↓ headers ★ 0 cookies
+  ┌ ↑ raw ★ 172B
+  │ {
+  │     "login": "JohnSnow",
+  │     "password": "J123123123123",
+  │     "firstName": "JohnSnow22",
+  │     "lastName": "Targaryien22",
+  │     "email": "Targaryien22@gmail.com"
+  │ }
+  └
+  ┌ ↓ application/json ★ text ★ json ★ utf8 ★ 1B
+  │ 1
+  └
+  prepare   wait   dns-lookup   tcp-handshake   transfer-start   download   process   total
+  36ms      8ms    6ms          1ms             233ms            55ms       467µs     341ms
+
+
+→ MainService_AddMoneyForUser
+  POST http://arch.homework/account/addMoneyForUser
+  200 OK ★ 15ms time ★ 349B↑ 133B↓ size ★ 9↑ 4↓ headers ★ 0 cookies
+  ┌ ↑ raw ★ 48B
+  │ {
+  │     "userid": "1",
+  │     "amount": "2000"
+  │ }
+  └
+  ↓ text/plain ★ text ★ plain ★ utf8
+
+  prepare   wait    dns-lookup   tcp-handshake   transfer-start   download   process   total
+  1ms       690µs   (cache)      (cache)         11ms             2ms        66µs      16ms
+
+
+→ MainService_GetAccount
+  GET http://arch.homework/account/getAccount?userId=1
+  200 OK ★ 11ms time ★ 252B↑ 205B↓ size ★ 7↑ 4↓ headers ★ 0 cookies
+  ┌ ↓ application/json ★ text ★ json ★ utf8 ★ 57B
+  │ {"id":1,"userId":1,"userName":"JohnSnow22","amount":2010}
+  └
+  prepare   wait    dns-lookup   tcp-handshake   transfer-start   download   process   total
+  2ms       257µs   (cache)      (cache)         8ms              1ms        63µs      13ms
+
+
+→ MainService_GetAvailableProductsInWarehouse
+  GET http://arch.homework/product/getavailableproducts
+  200 OK ★ 28ms time ★ 253B↑ 323B↓ size ★ 7↑ 4↓ headers ★ 0 cookies
+  ┌ ↓ application/json ★ text ★ json ★ utf8 ★ 175B
+  │ [{"id":1,"productId":1,"productName":"table","quantity":1},{"id":2,"productId":2,"productName":"chair","quantity":
+  │ 1},{"id":3,"productId":3,"productName":"divan","quantity":1}]
+  └
+  prepare   wait    dns-lookup   tcp-handshake   transfer-start   download   process   total
+  1ms       246µs   (cache)      (cache)         25ms             1ms        42µs      29ms
+
+
+→ MainService_CreateOrderForAvailableProduct
+  POST http://arch.homework/order/createOrder
+  200 OK ★ 3.1s time ★ 372B↑ 231B↓ size ★ 9↑ 4↓ headers ★ 0 cookies
+  ┌ ↑ raw ★ 77B
+  │ {
+  │     "userid": "1",
+  │     "productId": "1",
+  │     "productName": "table"
+  │ }
+  └
+  ┌ ↓ application/json ★ text ★ json ★ utf8 ★ 83B
+  │ {"status":1,"strStatus":null,"id":1,"userId":1,"productId":1,"productName":"table"}
+  └
+  prepare   wait    dns-lookup   tcp-handshake   transfer-start   download   process   total
+  1ms       330µs   (cache)      (cache)         3.1s             2ms        48µs      3.1s
+
+
+→ MainService_GetNotificationOrder1
+  GET http://arch.homework/order/getNotification?orderId=1
+  200 OK ★ 228ms time ★ 256B↑ 277B↓ size ★ 7↑ 4↓ headers ★ 0 cookies
+  ┌ ↓ application/json ★ text ★ json ★ utf8 ★ 129B
+  │ {"orderId":1,"emailText":"UserId: 1, ProductId: 1, ProductName: table --- Order confirmed","emailStatus":1,"emailT
+  │ extStr":"Sent"}
+  └
+  prepare   wait    dns-lookup   tcp-handshake   transfer-start   download   process   total
+  1ms       227µs   (cache)      (cache)         225ms            1ms        44µs      229ms
+
+
+→ MainService_GetAccount
+  GET http://arch.homework/account/getAccount?userId=1
+  200 OK ★ 9ms time ★ 252B↑ 205B↓ size ★ 7↑ 4↓ headers ★ 0 cookies
+  ┌ ↓ application/json ★ text ★ json ★ utf8 ★ 57B
+  │ {"id":1,"userId":1,"userName":"JohnSnow22","amount":1510}
+  └
+  prepare   wait    dns-lookup   tcp-handshake   transfer-start   download   process   total
+  1ms       228µs   (cache)      (cache)         6ms              1ms        38µs      10ms
+
+
+→ MainService_GetProductReservationOrder1
+  GET http://arch.homework/product/getproductreservation?orderId=1
+  200 OK ★ 21ms time ★ 264B↑ 217B↓ size ★ 7↑ 4↓ headers ★ 0 cookies
+  ┌ ↓ application/json ★ text ★ json ★ utf8 ★ 69B
+  │ [{"id":1,"orderId":1,"userId":1,"productId":1,"productName":"table"}]
+  └
+  prepare   wait    dns-lookup   tcp-handshake   transfer-start   download   process   total
+  1ms       289µs   (cache)      (cache)         18ms             1ms        41µs      22ms
+
+
+→ MainService_GetTimeslotReservationOrder1
+  GET http://arch.homework/product/gettimeslotreservation?orderId=1
+  200 OK ★ 21ms time ★ 265B↑ 217B↓ size ★ 7↑ 4↓ headers ★ 0 cookies
+  ┌ ↓ application/json ★ text ★ json ★ utf8 ★ 69B
+  │ [{"id":1,"orderId":1,"userId":1,"productId":1,"productName":"table"}]
+  └
+  prepare   wait    dns-lookup   tcp-handshake   transfer-start   download   process   total
+  1ms       334µs   (cache)      (cache)         18ms             1ms        35µs      22ms
+
+
+→ MainService_GetAvailableProductsInWarehouse
+  GET http://arch.homework/product/getavailableproducts
+  200 OK ★ 10ms time ★ 253B↑ 323B↓ size ★ 7↑ 4↓ headers ★ 0 cookies
+  ┌ ↓ application/json ★ text ★ json ★ utf8 ★ 175B
+  │ [{"id":2,"productId":2,"productName":"chair","quantity":1},{"id":3,"productId":3,"productName":"divan","quantity":
+  │ 1},{"id":1,"productId":1,"productName":"table","quantity":0}]
+  └
+  prepare   wait    dns-lookup   tcp-handshake   transfer-start   download   process   total
+  1ms       395µs   (cache)      (cache)         6ms              2ms        48µs      10ms
+
+
+→ MainService_CreateOrderForNotAvailableProduct
+  POST http://arch.homework/order/createOrder
+  200 OK ★ 101ms time ★ 372B↑ 237B↓ size ★ 9↑ 4↓ headers ★ 0 cookies
+  ┌ ↑ raw ★ 77B
+  │ {
+  │     "userid": "1",
+  │     "productId": "1",
+  │     "productName": "table"
+  │ }
+  └
+  ┌ ↓ application/json ★ text ★ json ★ utf8 ★ 89B
+  │ {"status":3,"strStatus":"Rejected","id":2,"userId":1,"productId":1,"productName":"table"}
+  └
+  prepare   wait    dns-lookup   tcp-handshake   transfer-start   download   process   total
+  1ms       197µs   (cache)      (cache)         98ms             1ms        101µs     102ms
+
+
+→ MainService_GetAccount
+  GET http://arch.homework/account/getAccount?userId=1
+  200 OK ★ 9ms time ★ 252B↑ 205B↓ size ★ 7↑ 4↓ headers ★ 0 cookies
+  ┌ ↓ application/json ★ text ★ json ★ utf8 ★ 57B
+  │ {"id":1,"userId":1,"userName":"JohnSnow22","amount":1510}
+  └
+  prepare   wait    dns-lookup   tcp-handshake   transfer-start   download   process   total
+  1ms       335µs   (cache)      (cache)         6ms              1ms        52µs      9ms
+
+
+→ MainService_GetNotificationOrder2
+  GET http://arch.homework/order/getNotification?orderId=2
+  200 OK ★ 13ms time ★ 256B↑ 300B↓ size ★ 7↑ 4↓ headers ★ 0 cookies
+  ┌ ↓ application/json ★ text ★ json ★ utf8 ★ 152B
+  │ {"orderId":2,"emailText":"UserId: 1, ProductId: 1, ProductName: table --- Order rejected (product not available)",
+  │ "emailStatus":1,"emailTextStr":"Sent"}
+  └
+  prepare   wait    dns-lookup   tcp-handshake   transfer-start   download   process   total
+  1ms       558µs   (cache)      (cache)         10ms             1ms        32µs      14ms
+
+
+→ MainService_GetProductReservationOrder2
+  GET http://arch.homework/product/getproductreservation?orderId=2
+  200 OK ★ 10ms time ★ 264B↑ 150B↓ size ★ 7↑ 4↓ headers ★ 0 cookies
+  ┌ ↓ application/json ★ text ★ json ★ utf8 ★ 2B
+  │ []
+  └
+  prepare   wait    dns-lookup   tcp-handshake   transfer-start   download   process   total
+  1ms       490µs   (cache)      (cache)         7ms              1ms        30µs      10ms
+
+
+→ MainService_GetTimeslotReservationOrder2
+  GET http://arch.homework/product/gettimeslotreservation?orderId=2
+  200 OK ★ 10ms time ★ 265B↑ 150B↓ size ★ 7↑ 4↓ headers ★ 0 cookies
+  ┌ ↓ application/json ★ text ★ json ★ utf8 ★ 2B
+  │ []
+  └
+  prepare   wait    dns-lookup   tcp-handshake   transfer-start   download   process   total
+  1ms       481µs   (cache)      (cache)         7ms              1ms        177µs     10ms
+
+
+→ MainService_GetAvailableProductsInWarehouse
+  GET http://arch.homework/product/getavailableproducts
+  200 OK ★ 9ms time ★ 253B↑ 323B↓ size ★ 7↑ 4↓ headers ★ 0 cookies
+  ┌ ↓ application/json ★ text ★ json ★ utf8 ★ 175B
+  │ [{"id":2,"productId":2,"productName":"chair","quantity":1},{"id":3,"productId":3,"productName":"divan","quantity":
+  │ 1},{"id":1,"productId":1,"productName":"table","quantity":0}]
+  └
+  prepare   wait    dns-lookup   tcp-handshake   transfer-start   download   process   total
+  1ms       206µs   (cache)      (cache)         6ms              1ms        35µs      9ms
+
+
+→ MainService_GetAvailableTimeslots
+  GET http://arch.homework/product/getavailabletimeslots
+  200 OK ★ 18ms time ★ 254B↑ 341B↓ size ★ 7↑ 4↓ headers ★ 0 cookies
+  ┌ ↓ application/json ★ text ★ json ★ utf8 ★ 193B
+  │ [{"id":2,"productId":2,"productName":"chair","timeslotsCount":0},{"id":3,"productId":3,"productName":"divan","time
+  │ slotsCount":1},{"id":1,"productId":1,"productName":"table","timeslotsCount":0}]
+  └
+  prepare   wait    dns-lookup   tcp-handshake   transfer-start   download   process   total
+  1ms       203µs   (cache)      (cache)         16ms             1ms        31µs      19ms
+
+
+→ MainService_CreateOrderForNotAvailableTimeslot
+  POST http://arch.homework/order/createOrder
+  200 OK ★ 70ms time ★ 372B↑ 237B↓ size ★ 9↑ 4↓ headers ★ 0 cookies
+  ┌ ↑ raw ★ 77B
+  │ {
+  │     "userid": "1",
+  │     "productId": "2",
+  │     "productName": "chair"
+  │ }
+  └
+  ┌ ↓ application/json ★ text ★ json ★ utf8 ★ 89B
+  │ {"status":3,"strStatus":"Rejected","id":3,"userId":1,"productId":2,"productName":"chair"}
+  └
+  prepare   wait    dns-lookup   tcp-handshake   transfer-start   download   process   total
+  1ms       183µs   (cache)      (cache)         68ms             1ms        24µs      71ms
+
+
+→ MainService_GetAccount
+  GET http://arch.homework/account/getAccount?userId=1
+  200 OK ★ 9ms time ★ 252B↑ 205B↓ size ★ 7↑ 4↓ headers ★ 0 cookies
+  ┌ ↓ application/json ★ text ★ json ★ utf8 ★ 57B
+  │ {"id":1,"userId":1,"userName":"JohnSnow22","amount":1510}
+  └
+  prepare   wait    dns-lookup   tcp-handshake   transfer-start   download   process   total
+  1ms       210µs   (cache)      (cache)         6ms              1ms        23µs      10ms
+
+
+→ MainService_GetAvailableProductsInWarehouse
+  GET http://arch.homework/product/getavailableproducts
+  200 OK ★ 9ms time ★ 253B↑ 323B↓ size ★ 7↑ 4↓ headers ★ 0 cookies
+  ┌ ↓ application/json ★ text ★ json ★ utf8 ★ 175B
+  │ [{"id":3,"productId":3,"productName":"divan","quantity":1},{"id":1,"productId":1,"productName":"table","quantity":
+  │ 0},{"id":2,"productId":2,"productName":"chair","quantity":1}]
+  └
+  prepare   wait    dns-lookup   tcp-handshake   transfer-start   download   process   total
+  1ms       203µs   (cache)      (cache)         6ms              1ms        23µs      9ms
+
+
+→ MainService_GetNotificationOrder3
+  GET http://arch.homework/order/getNotification?orderId=3
+  200 OK ★ 10ms time ★ 256B↑ 301B↓ size ★ 7↑ 4↓ headers ★ 0 cookies
+  ┌ ↓ application/json ★ text ★ json ★ utf8 ★ 153B
+  │ {"orderId":3,"emailText":"UserId: 1, ProductId: 2, ProductName: chair --- Order rejected (no available timeslots)"
+  │ ,"emailStatus":1,"emailTextStr":"Sent"}
+  └
+  prepare   wait    dns-lookup   tcp-handshake   transfer-start   download   process   total
+  2ms       226µs   (cache)      (cache)         7ms              1ms        24µs      12ms
+
+
+→ MainService_GetProductReservationOrder3
+  GET http://arch.homework/product/getproductreservation?orderId=3
+  200 OK ★ 8ms time ★ 264B↑ 150B↓ size ★ 7↑ 4↓ headers ★ 0 cookies
+  ┌ ↓ application/json ★ text ★ json ★ utf8 ★ 2B
+  │ []
+  └
+  prepare   wait    dns-lookup   tcp-handshake   transfer-start   download   process   total
+  1ms       190µs   (cache)      (cache)         6ms              1ms        24µs      9ms
+
+
+→ MainService_GetTimeslotReservationOrder3
+  GET http://arch.homework/product/gettimeslotreservation?orderId=3
+  200 OK ★ 10ms time ★ 265B↑ 150B↓ size ★ 7↑ 4↓ headers ★ 0 cookies
+  ┌ ↓ application/json ★ text ★ json ★ utf8 ★ 2B
+  │ []
+  └
+  prepare   wait    dns-lookup   tcp-handshake   transfer-start   download   process   total
+  1ms       256µs   (cache)      (cache)         8ms              1ms        37µs      11ms
+
+
+┌─────────────────────────┬────────────────────┬────────────────────┐
+│                         │           executed │             failed │
+├─────────────────────────┼────────────────────┼────────────────────┤
+│              iterations │                  1 │                  0 │
+├─────────────────────────┼────────────────────┼────────────────────┤
+│                requests │                 23 │                  0 │
+├─────────────────────────┼────────────────────┼────────────────────┤
+│            test-scripts │                  0 │                  0 │
+├─────────────────────────┼────────────────────┼────────────────────┤
+│      prerequest-scripts │                  0 │                  0 │
+├─────────────────────────┼────────────────────┼────────────────────┤
+│              assertions │                  0 │                  0 │
+├─────────────────────────┴────────────────────┴────────────────────┤
+│ total run duration: 6.2s                                          │
+├───────────────────────────────────────────────────────────────────┤
+│ total data received: 1.96kB (approx)                              │
+├───────────────────────────────────────────────────────────────────┤
+│ average response time: 177ms [min: 8ms, max: 3.1s, s.d.: 636ms]   │
+├───────────────────────────────────────────────────────────────────┤
+│ average DNS lookup time: 6ms [min: 6ms, max: 6ms, s.d.: 0µs]      │
+├───────────────────────────────────────────────────────────────────┤
+│ average first byte time: 171ms [min: 6ms, max: 3.1s, s.d.: 636ms] │
+└───────────────────────────────────────────────────────────────────┘

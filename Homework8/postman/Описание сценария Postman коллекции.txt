@@ -1,0 +1,23 @@
+1. регистрация пользователя MainService_RegisterUser
+2. добавление денег на счет MainService_AddMoneyForUser
+3. проверка аккаунта MainService_GetAccount
+4. проверка доступных товаров на складе MainService_GetAvailableProductsInWarehouse
+5. создание заказа по доступному товару MainService_CreateOrderForAvailableProduct
+6. проверка отправки нотификаций по заказу MainService_GetNotificationOrder1
+7. проверка что с пользователя были сняты деньги за заказ MainService_GetAccount
+8. проверка что товар был зарезервирован на складе MainService_GetProductReservationOrder1
+9. проверка что товар был зарезервирован таймслот в сервисе доставки MainService_GetTimeslotReservationOrder1
+10. проверка доступных товаров на складе MainService_GetAvailableProductsInWarehouse
+11. попытка создания заказа на товар, который отсутствует на складе MainService_CreateOrderForNotAvailableProduct
+12. проверка что с пользователю вернули деньги за заказ MainService_GetAccount
+13. проверка отправки нотификаций по заказу MainService_GetNotificationOrder2
+14. проверка что не был зарезервирован товар на складе MainService_GetProductReservationOrder2
+15. проверка, что не был зарезервирован таймслот в сервисе доставки MainService_GetTimeslotReservationOrder2
+16. проверка доступных товаров на складе MainService_GetAvailableProductsInWarehouse
+17. проверка доступных таймслотов в сервисе доставки MainService_GetAvailableTimeslots
+18. попытка создания заказа на товар для которого нет свободных таймслотов MainService_CreateOrderForNotAvailableTimeslot
+19. проверка что с пользователю вернули деньги за заказ MainService_GetAccount
+20. проверка доступных товаров на складе MainService_GetAvailableProductsInWarehouse
+21. проверка отправки нотификаций по заказу MainService_GetNotificationOrder3
+22. проверка что не был зарезервирован товар на складе MainService_GetProductReservationOrder3
+23. проверка, что не был зарезервирован таймслот в сервисе доставки MainService_GetTimeslotReservationOrder3

@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: homework8notificationservice
+  labels:
+    app: homework8notificationservice
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: homework8notificationservice
+  template:
+    metadata:
+      labels:
+        app: homework8notificationservice
+    spec:
+      containers:
+      - name: homework8notificationservice
+        image: flash1200/homework8_notificationservice:firstversion
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 8080 
+        env:
+          - name: Database__ConnectionString
+            valueFrom:
+              secretKeyRef:
+                name: "homework8notificationservicesecret"
+                key: "homework8notificationservicedbconnectionstring"

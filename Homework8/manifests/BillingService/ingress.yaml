@@ -1,0 +1,19 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  annotations:
+    nginx.ingress.kubernetes.io/use-regex: "true"  
+  name: homework8-ingress
+spec:
+  rules:
+  - host: arch.homework8
+    http:
+      paths:     
+      - path: /health
+        pathType: ImplementationSpecific
+        backend:
+          service:
+            name: homework8billingservice
+            port:
+              number: 80
+ 
