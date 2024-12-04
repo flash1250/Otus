@@ -1,0 +1,242 @@
+{
+	"info": {
+		"_postman_id": "915dfa34-3de4-4d3b-9e4a-c20ce53d87c7",
+		"name": "OTUS_Homework9_NewmanKuber",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "MainService_RegisterUser",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"login\": \"JohnSnow\",\r\n    \"password\": \"J123123123123\",\r\n    \"firstName\": \"JohnSnow22\",\r\n    \"lastName\": \"Targaryien22\",\r\n    \"email\": \"Targaryien22@gmail.com\"    \r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://arch.homework/account/registerUser",
+					"protocol": "http",
+					"host": [
+						"arch",
+						"homework"
+					],
+					"path": [
+						"account",
+						"registerUser"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "MainService_AddMoneyForUser",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"userid\": \"1\",\r\n    \"amount\": \"2000\"  \r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://arch.homework/account/addMoneyForUser",
+					"protocol": "http",
+					"host": [
+						"arch",
+						"homework"
+					],
+					"path": [
+						"account",
+						"addMoneyForUser"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "MainService_CreateOrderForAvailableProduct",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"userid\": \"1\",\r\n    \"productId\": \"1\",\r\n    \"productName\": \"table\",\r\n    \"corellationId\": \"6f19a7a7-69fd-4e74-ae1f-afc06ea2f49e\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://arch.homework/order/createOrder",
+					"protocol": "http",
+					"host": [
+						"arch",
+						"homework"
+					],
+					"path": [
+						"order",
+						"createOrder"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "MainService_CreateOrderForAvailableProduct Copy",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"userid\": \"1\",\r\n    \"productId\": \"1\",\r\n    \"productName\": \"table\",\r\n    \"corellationId\": \"6f19a7a7-69fd-4e74-ae1f-afc06ea2f49e\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://arch.homework/order/createOrder",
+					"protocol": "http",
+					"host": [
+						"arch",
+						"homework"
+					],
+					"path": [
+						"order",
+						"createOrder"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "MainService_CreateOrderForAvailableProduct Copy 2",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"userid\": \"1\",\r\n    \"productId\": \"1\",\r\n    \"productName\": \"table\",\r\n    \"corellationId\": \"6f19a7a7-69fd-4e74-ae1f-afc06ea2f49e\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://arch.homework/order/createOrder",
+					"protocol": "http",
+					"host": [
+						"arch",
+						"homework"
+					],
+					"path": [
+						"order",
+						"createOrder"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "MainService_CreateOrderForAvailableProduct Copy 3",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"userid\": \"1\",\r\n    \"productId\": \"1\",\r\n    \"productName\": \"table\",\r\n    \"corellationId\": \"6f19a7a7-69fd-4e74-ae1f-afc06ea2f49e\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://arch.homework/order/createOrder",
+					"protocol": "http",
+					"host": [
+						"arch",
+						"homework"
+					],
+					"path": [
+						"order",
+						"createOrder"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "MainService_CreateOrderForAvailableProduct Copy 4",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"userid\": \"1\",\r\n    \"productId\": \"1\",\r\n    \"productName\": \"table\",\r\n    \"corellationId\": \"6f19a7a7-69fd-4e74-ae1f-afc06ea2f49e\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://arch.homework/order/createOrder",
+					"protocol": "http",
+					"host": [
+						"arch",
+						"homework"
+					],
+					"path": [
+						"order",
+						"createOrder"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "MainService_CreateOrderForAvailableProduct Copy 5",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"userid\": \"1\",\r\n    \"productId\": \"1\",\r\n    \"productName\": \"table\",\r\n    \"corellationId\": \"6f19a7a7-69fd-4e74-ae1f-afc06ea2f49e\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://arch.homework/order/createOrder",
+					"protocol": "http",
+					"host": [
+						"arch",
+						"homework"
+					],
+					"path": [
+						"order",
+						"createOrder"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}

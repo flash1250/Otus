@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: homework8mainservice
+  labels:
+    app: homework8mainservice
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: homework8mainservice
+  template:
+    metadata:
+      labels:
+        app: homework8mainservice
+    spec:
+      containers:
+      - name: homework8mainservice
+        image: flash1200/homework8_mainservice:firstversion
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 8080      

@@ -1,0 +1,176 @@
+C:\OTUS\otus_github\Homework9\postman>newman run OTUS_Homework9_NewmanKuber.postman_collection.json --verbose
+newman
+
+OTUS_Homework9_NewmanKuber
+
+→ MainService_RegisterUser
+  POST http://arch.homework/account/registerUser
+  200 OK ★ 1354ms time ★ 471B↑ 149B↓ size ★ 9↑ 4↓ headers ★ 0 cookies
+  ┌ ↑ raw ★ 172B
+  │ {
+  │     "login": "JohnSnow",
+  │     "password": "J123123123123",
+  │     "firstName": "JohnSnow22",
+  │     "lastName": "Targaryien22",
+  │     "email": "Targaryien22@gmail.com"
+  │ }
+  └
+  ┌ ↓ application/json ★ text ★ json ★ utf8 ★ 1B
+  │ 1
+  └
+  prepare   wait   dns-lookup   tcp-handshake   transfer-start   download   process   total
+  42ms      10ms   1ms          948µs           1294ms           45ms       532µs     1397ms
+
+
+→ MainService_AddMoneyForUser
+  POST http://arch.homework/account/addMoneyForUser
+  200 OK ★ 228ms time ★ 349B↑ 133B↓ size ★ 9↑ 4↓ headers ★ 0 cookies
+  ┌ ↑ raw ★ 48B
+  │ {
+  │     "userid": "1",
+  │     "amount": "2000"
+  │ }
+  └
+  ↓ text/plain ★ text ★ plain ★ utf8
+
+  prepare   wait    dns-lookup   tcp-handshake   transfer-start   download   process   total
+  2ms       599µs   (cache)      (cache)         224ms            2ms        63µs      229ms
+
+
+→ MainService_CreateOrderForAvailableProduct
+  POST http://arch.homework/order/createOrder
+  200 OK ★ 5s time ★ 433B↑ 291B↓ size ★ 9↑ 4↓ headers ★ 0 cookies
+  ┌ ↑ raw ★ 137B
+  │ {
+  │     "userid": "1",
+  │     "productId": "1",
+  │     "productName": "table",
+  │     "corellationId": "6f19a7a7-69fd-4e74-ae1f-afc06ea2f49e"
+  │ }
+  └
+  ┌ ↓ application/json ★ text ★ json ★ utf8 ★ 143B
+  │ {"status":2,"strStatus":"Created","id":1,"userId":1,"productId":1,"productName":"table","corellationId":"6f19a7a7-
+  │ 69fd-4e74-ae1f-afc06ea2f49e"}
+  └
+  prepare   wait    dns-lookup   tcp-handshake   transfer-start   download   process   total
+  1ms       220µs   (cache)      (cache)         5s               2ms        57µs      5s
+
+
+→ MainService_CreateOrderForAvailableProduct Copy
+  POST http://arch.homework/order/createOrder
+  200 OK ★ 24ms time ★ 433B↑ 291B↓ size ★ 9↑ 4↓ headers ★ 0 cookies
+  ┌ ↑ raw ★ 137B
+  │ {
+  │     "userid": "1",
+  │     "productId": "1",
+  │     "productName": "table",
+  │     "corellationId": "6f19a7a7-69fd-4e74-ae1f-afc06ea2f49e"
+  │ }
+  └
+  ┌ ↓ application/json ★ text ★ json ★ utf8 ★ 143B
+  │ {"status":2,"strStatus":"Created","id":1,"userId":1,"productId":1,"productName":"table","corellationId":"6f19a7a7-
+  │ 69fd-4e74-ae1f-afc06ea2f49e"}
+  └
+  prepare   wait    dns-lookup   tcp-handshake   transfer-start   download   process   total
+  2ms       234µs   (cache)      (cache)         20ms             2ms        45µs      25ms
+
+
+→ MainService_CreateOrderForAvailableProduct Copy 2
+  POST http://arch.homework/order/createOrder
+  200 OK ★ 12ms time ★ 433B↑ 291B↓ size ★ 9↑ 4↓ headers ★ 0 cookies
+  ┌ ↑ raw ★ 137B
+  │ {
+  │     "userid": "1",
+  │     "productId": "1",
+  │     "productName": "table",
+  │     "corellationId": "6f19a7a7-69fd-4e74-ae1f-afc06ea2f49e"
+  │ }
+  └
+  ┌ ↓ application/json ★ text ★ json ★ utf8 ★ 143B
+  │ {"status":2,"strStatus":"Created","id":1,"userId":1,"productId":1,"productName":"table","corellationId":"6f19a7a7-
+  │ 69fd-4e74-ae1f-afc06ea2f49e"}
+  └
+  prepare   wait    dns-lookup   tcp-handshake   transfer-start   download   process   total
+  2ms       265µs   (cache)      (cache)         9ms              2ms        63µs      13ms
+
+
+→ MainService_CreateOrderForAvailableProduct Copy 3
+  POST http://arch.homework/order/createOrder
+  200 OK ★ 10ms time ★ 433B↑ 291B↓ size ★ 9↑ 4↓ headers ★ 0 cookies
+  ┌ ↑ raw ★ 137B
+  │ {
+  │     "userid": "1",
+  │     "productId": "1",
+  │     "productName": "table",
+  │     "corellationId": "6f19a7a7-69fd-4e74-ae1f-afc06ea2f49e"
+  │ }
+  └
+  ┌ ↓ application/json ★ text ★ json ★ utf8 ★ 143B
+  │ {"status":2,"strStatus":"Created","id":1,"userId":1,"productId":1,"productName":"table","corellationId":"6f19a7a7-
+  │ 69fd-4e74-ae1f-afc06ea2f49e"}
+  └
+  prepare   wait    dns-lookup   tcp-handshake   transfer-start   download   process   total
+  1ms       173µs   (cache)      (cache)         7ms              1ms        39µs      11ms
+
+
+→ MainService_CreateOrderForAvailableProduct Copy 4
+  POST http://arch.homework/order/createOrder
+  200 OK ★ 10ms time ★ 433B↑ 291B↓ size ★ 9↑ 4↓ headers ★ 0 cookies
+  ┌ ↑ raw ★ 137B
+  │ {
+  │     "userid": "1",
+  │     "productId": "1",
+  │     "productName": "table",
+  │     "corellationId": "6f19a7a7-69fd-4e74-ae1f-afc06ea2f49e"
+  │ }
+  └
+  ┌ ↓ application/json ★ text ★ json ★ utf8 ★ 143B
+  │ {"status":2,"strStatus":"Created","id":1,"userId":1,"productId":1,"productName":"table","corellationId":"6f19a7a7-
+  │ 69fd-4e74-ae1f-afc06ea2f49e"}
+  └
+  prepare   wait    dns-lookup   tcp-handshake   transfer-start   download   process   total
+  1ms       182µs   (cache)      (cache)         7ms              1ms        35µs      10ms
+
+
+→ MainService_CreateOrderForAvailableProduct Copy 5
+  POST http://arch.homework/order/createOrder
+  200 OK ★ 10ms time ★ 433B↑ 291B↓ size ★ 9↑ 4↓ headers ★ 0 cookies
+  ┌ ↑ raw ★ 137B
+  │ {
+  │     "userid": "1",
+  │     "productId": "1",
+  │     "productName": "table",
+  │     "corellationId": "6f19a7a7-69fd-4e74-ae1f-afc06ea2f49e"
+  │ }
+  └
+  ┌ ↓ application/json ★ text ★ json ★ utf8 ★ 143B
+  │ {"status":2,"strStatus":"Created","id":1,"userId":1,"productId":1,"productName":"table","corellationId":"6f19a7a7-
+  │ 69fd-4e74-ae1f-afc06ea2f49e"}
+  └
+  prepare   wait    dns-lookup   tcp-handshake   transfer-start   download   process   total
+  1ms       220µs   (cache)      (cache)         7ms              1ms        35µs      11ms
+
+
+┌─────────────────────────┬────────────────────┬───────────────────┐
+│                         │           executed │            failed │
+├─────────────────────────┼────────────────────┼───────────────────┤
+│              iterations │                  1 │                 0 │
+├─────────────────────────┼────────────────────┼───────────────────┤
+│                requests │                  8 │                 0 │
+├─────────────────────────┼────────────────────┼───────────────────┤
+│            test-scripts │                  0 │                 0 │
+├─────────────────────────┼────────────────────┼───────────────────┤
+│      prerequest-scripts │                  0 │                 0 │
+├─────────────────────────┼────────────────────┼───────────────────┤
+│              assertions │                  0 │                 0 │
+├─────────────────────────┴────────────────────┴───────────────────┤
+│ total run duration: 7.5s                                         │
+├──────────────────────────────────────────────────────────────────┤
+│ total data received: 859B (approx)                               │
+├──────────────────────────────────────────────────────────────────┤
+│ average response time: 843ms [min: 10ms, max: 5s, s.d.: 1665ms]  │
+├──────────────────────────────────────────────────────────────────┤
+│ average DNS lookup time: 1ms [min: 1ms, max: 1ms, s.d.: 0µs]     │
+├──────────────────────────────────────────────────────────────────┤
+│ average first byte time: 833ms [min: 7ms, max: 5s, s.d.: 1663ms] │
+└──────────────────────────────────────────────────────────────────┘
