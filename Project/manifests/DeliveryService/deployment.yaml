@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: homework8deliveryservice
+  labels:
+    app: homework8deliveryservice
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: homework8deliveryservice
+  template:
+    metadata:
+      labels:
+        app: homework8deliveryservice
+    spec:
+      containers:
+      - name: homework8deliveryservice
+        image: flash1200/homework8_deliveryservice:firstversion
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 8080 
+        env:
+          - name: Database__ConnectionString
+            valueFrom:
+              secretKeyRef:
+                name: "homework8deliveryservicesecret"
+                key: "homework8deliveryservicedbconnectionstring"

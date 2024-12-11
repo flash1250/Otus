@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: homework8billingservice
+  labels:
+    app: homework8billingservice
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: homework8billingservice
+  template:
+    metadata:
+      labels:
+        app: homework8billingservice
+    spec:
+      containers:
+      - name: homework8billingservice
+        image: flash1200/homework8_billingservice2:latest
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 8080 
+        env:
+          - name: Database__ConnectionString
+            valueFrom:
+              secretKeyRef:
+                name: "homework8billingservicesecret"
+                key: "homework8billingservicedbconnectionstring"
