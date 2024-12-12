@@ -1,0 +1,981 @@
+{
+	"info": {
+		"_postman_id": "ebeb7e51-9229-421e-9069-6311ac357c0d",
+		"name": "OTUS_Project_Kuber",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "RegisterUser",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"login\": \"JohnSnow\",\r\n    \"password\": \"J123123123123\",\r\n    \"firstName\": \"JohnSnow22\",\r\n    \"lastName\": \"Targaryien22\",\r\n    \"email\": \"Targaryien22@gmail.com\"    \r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://arch.homework/account/registerUser",
+					"protocol": "http",
+					"host": [
+						"arch",
+						"homework"
+					],
+					"path": [
+						"account",
+						"registerUser"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "AddMoneyForUser",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"userid\": \"1\",\r\n    \"amount\": \"100\"  \r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://arch.homework/account/addMoneyForUser",
+					"protocol": "http",
+					"host": [
+						"arch",
+						"homework"
+					],
+					"path": [
+						"account",
+						"addMoneyForUser"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetProducts",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"userid\": \"1\",\r\n    \"amount\": \"100\"  \r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://arch.homework/product/getproducts",
+					"protocol": "http",
+					"host": [
+						"arch",
+						"homework"
+					],
+					"path": [
+						"product",
+						"getproducts"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "AddProductToBasket_1",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{   \r\n    \"userid\": \"1\",\r\n    \"productId\": \"1\",\r\n    \"productName\": \"table\",\r\n    \"quantity\": \"2\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://arch.homework/basket/addProductToBasket",
+					"protocol": "http",
+					"host": [
+						"arch",
+						"homework"
+					],
+					"path": [
+						"basket",
+						"addProductToBasket"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetBasket",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"userid\": \"1\",\r\n    \"amount\": \"100\"  \r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://arch.homework/basket/getbasket?userId=1",
+					"protocol": "http",
+					"host": [
+						"arch",
+						"homework"
+					],
+					"path": [
+						"basket",
+						"getbasket"
+					],
+					"query": [
+						{
+							"key": "userId",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "AddProductToBasket_2",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{   \r\n    \"userid\": \"1\",\r\n    \"productId\": \"2\",\r\n    \"productName\": \"chair\",\r\n    \"quantity\": \"11\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://arch.homework/basket/addProductToBasket",
+					"protocol": "http",
+					"host": [
+						"arch",
+						"homework"
+					],
+					"path": [
+						"basket",
+						"addProductToBasket"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetBasket",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"userid\": \"1\",\r\n    \"amount\": \"100\"  \r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://arch.homework/basket/getbasket?userId=1",
+					"protocol": "http",
+					"host": [
+						"arch",
+						"homework"
+					],
+					"path": [
+						"basket",
+						"getbasket"
+					],
+					"query": [
+						{
+							"key": "userId",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ChangeProductQuantityinBasket_1_Add",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{   \r\n    \"userid\": \"1\",\r\n    \"productId\": \"1\",    \r\n    \"quantity\": \"1\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://arch.homework/basket/changeProductQuantityinBasket",
+					"protocol": "http",
+					"host": [
+						"arch",
+						"homework"
+					],
+					"path": [
+						"basket",
+						"changeProductQuantityinBasket"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetBasket",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"userid\": \"1\",\r\n    \"amount\": \"100\"  \r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://arch.homework/basket/getbasket?userId=1",
+					"protocol": "http",
+					"host": [
+						"arch",
+						"homework"
+					],
+					"path": [
+						"basket",
+						"getbasket"
+					],
+					"query": [
+						{
+							"key": "userId",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ChangeProductQuantityinBasket_1_Distract",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{   \r\n    \"userid\": \"1\",\r\n    \"productId\": \"1\",    \r\n    \"DistractQuantity\": \"2\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://arch.homework/basket/changeProductQuantityinBasket",
+					"protocol": "http",
+					"host": [
+						"arch",
+						"homework"
+					],
+					"path": [
+						"basket",
+						"changeProductQuantityinBasket"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetBasket",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"userid\": \"1\",\r\n    \"amount\": \"100\"  \r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://arch.homework/basket/getbasket?userId=1",
+					"protocol": "http",
+					"host": [
+						"arch",
+						"homework"
+					],
+					"path": [
+						"basket",
+						"getbasket"
+					],
+					"query": [
+						{
+							"key": "userId",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetProducts",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"userid\": \"1\",\r\n    \"amount\": \"100\"  \r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://arch.homework/product/getproducts",
+					"protocol": "http",
+					"host": [
+						"arch",
+						"homework"
+					],
+					"path": [
+						"product",
+						"getproducts"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "AddProductToBasket_3",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{   \r\n    \"userid\": \"1\",\r\n    \"productId\": \"2\",\r\n    \"productName\": \"chair\",\r\n    \"quantity\": \"11\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://arch.homework/basket/addProductToBasket",
+					"protocol": "http",
+					"host": [
+						"arch",
+						"homework"
+					],
+					"path": [
+						"basket",
+						"addProductToBasket"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "RemoveProductFromBasket_3",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{   \r\n    \"userid\": \"1\",\r\n    \"productId\": \"3\",\r\n    \"productName\": \"divan\"   \r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://arch.homework/basket/removeProductFromBasket",
+					"protocol": "http",
+					"host": [
+						"arch",
+						"homework"
+					],
+					"path": [
+						"basket",
+						"removeProductFromBasket"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetBasket",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"userid\": \"1\",\r\n    \"amount\": \"100\"  \r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://arch.homework/basket/getbasket?userId=1",
+					"protocol": "http",
+					"host": [
+						"arch",
+						"homework"
+					],
+					"path": [
+						"basket",
+						"getbasket"
+					],
+					"query": [
+						{
+							"key": "userId",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "CreateOrder",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{   \r\n    \"userid\": \"1\",\r\n    \"items\": [\r\n        {\r\n            \"productId\": \"1\",\r\n            \"productName\": \"table\",\r\n            \"quantity\": \"1\"\r\n        },\r\n        {\r\n            \"productId\": \"2\",\r\n            \"productName\": \"chair\",\r\n            \"quantity\": \"11\"\r\n        }\r\n    ],  \r\n    \"corellationId\": \"6f19a7a7-69fd-4e74-ae1f-afc06ea2f49e\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://arch.homework/order/createOrder",
+					"protocol": "http",
+					"host": [
+						"arch",
+						"homework"
+					],
+					"path": [
+						"order",
+						"createOrder"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetNotificationOrder1",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://arch.homework/order/getNotification?orderId=1",
+					"protocol": "http",
+					"host": [
+						"arch",
+						"homework"
+					],
+					"path": [
+						"order",
+						"getNotification"
+					],
+					"query": [
+						{
+							"key": "orderId",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetAccount",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://arch.homework/account/getAccount?userId=1",
+					"protocol": "http",
+					"host": [
+						"arch",
+						"homework"
+					],
+					"path": [
+						"account",
+						"getAccount"
+					],
+					"query": [
+						{
+							"key": "userId",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetBasket",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"userid\": \"1\",\r\n    \"amount\": \"100\"  \r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://arch.homework/basket/getbasket?userId=1",
+					"protocol": "http",
+					"host": [
+						"arch",
+						"homework"
+					],
+					"path": [
+						"basket",
+						"getbasket"
+					],
+					"query": [
+						{
+							"key": "userId",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "AddMoneyForUser",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"userid\": \"1\",\r\n    \"amount\": \"10000\"  \r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://arch.homework/account/addMoneyForUser",
+					"protocol": "http",
+					"host": [
+						"arch",
+						"homework"
+					],
+					"path": [
+						"account",
+						"addMoneyForUser"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetAccount",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://arch.homework/account/getAccount?userId=1",
+					"protocol": "http",
+					"host": [
+						"arch",
+						"homework"
+					],
+					"path": [
+						"account",
+						"getAccount"
+					],
+					"query": [
+						{
+							"key": "userId",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "CreateOrder",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{   \r\n    \"userid\": \"1\",\r\n    \"items\": [\r\n        {\r\n            \"productId\": \"1\",\r\n            \"productName\": \"table\",\r\n            \"quantity\": \"1\"\r\n        },\r\n        {\r\n            \"productId\": \"2\",\r\n            \"productName\": \"chair\",\r\n            \"quantity\": \"11\"\r\n        }\r\n    ],  \r\n    \"corellationId\": \"6f19a7a7-69fd-4e74-af1f-afc06ea2f49e\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://arch.homework/order/createOrder",
+					"protocol": "http",
+					"host": [
+						"arch",
+						"homework"
+					],
+					"path": [
+						"order",
+						"createOrder"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetNotificationOrder2",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://arch.homework/order/getNotification?orderId=2",
+					"protocol": "http",
+					"host": [
+						"arch",
+						"homework"
+					],
+					"path": [
+						"order",
+						"getNotification"
+					],
+					"query": [
+						{
+							"key": "orderId",
+							"value": "2"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetBasket",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"userid\": \"1\",\r\n    \"amount\": \"100\"  \r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://arch.homework/basket/getbasket?userId=1",
+					"protocol": "http",
+					"host": [
+						"arch",
+						"homework"
+					],
+					"path": [
+						"basket",
+						"getbasket"
+					],
+					"query": [
+						{
+							"key": "userId",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetAvailableProductsInWarehouse",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://arch.homework/product/getavailableproducts",
+					"protocol": "http",
+					"host": [
+						"arch",
+						"homework"
+					],
+					"path": [
+						"product",
+						"getavailableproducts"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ChangeProductQuantityinBasket_Distract",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{   \r\n    \"userid\": \"1\",\r\n    \"productId\": \"1\",    \r\n    \"DistractQuantity\": \"2\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://arch.homework/basket/changeProductQuantityinBasket",
+					"protocol": "http",
+					"host": [
+						"arch",
+						"homework"
+					],
+					"path": [
+						"basket",
+						"changeProductQuantityinBasket"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetBasket",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"userid\": \"1\",\r\n    \"amount\": \"100\"  \r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://arch.homework/basket/getbasket?userId=1",
+					"protocol": "http",
+					"host": [
+						"arch",
+						"homework"
+					],
+					"path": [
+						"basket",
+						"getbasket"
+					],
+					"query": [
+						{
+							"key": "userId",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "CreateOrder",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{   \r\n    \"userid\": \"1\",\r\n    \"items\": [\r\n        {\r\n            \"productId\": \"1\",\r\n            \"productName\": \"table\",\r\n            \"quantity\": \"1\"\r\n        },\r\n        {\r\n            \"productId\": \"2\",\r\n            \"productName\": \"chair\",\r\n            \"quantity\": \"8\"\r\n        }\r\n    ],  \r\n    \"corellationId\": \"6f19a7a7-69fd-4e74-ef1f-afc06ea2f49e\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://arch.homework/order/createOrder",
+					"protocol": "http",
+					"host": [
+						"arch",
+						"homework"
+					],
+					"path": [
+						"order",
+						"createOrder"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetNotificationOrder3",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://arch.homework/order/getNotification?orderId=1",
+					"protocol": "http",
+					"host": [
+						"arch",
+						"homework"
+					],
+					"path": [
+						"order",
+						"getNotification"
+					],
+					"query": [
+						{
+							"key": "orderId",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "MainService_GetOrderReservation",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8100/account/getAccount?userId=1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8100",
+					"path": [
+						"account",
+						"getAccount"
+					],
+					"query": [
+						{
+							"key": "userId",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "MainService_GetTimeslotReservation",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://arch.homework/product/gettimeslotreservation?orderId=3",
+					"protocol": "http",
+					"host": [
+						"arch",
+						"homework"
+					],
+					"path": [
+						"product",
+						"gettimeslotreservation"
+					],
+					"query": [
+						{
+							"key": "orderId",
+							"value": "3"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
